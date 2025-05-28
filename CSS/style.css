@@ -184,7 +184,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: url(img/hro-bg.jpg);
+    background-image: url(../img/assets/hro-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -275,7 +275,7 @@ body {
 
 .about .row .about-img img {
     width: 100%;
-    mask-image: url(img/splashSVG.svg);
+    mask-image: url(../img/assets/splashSVG.svg);
     mask-size: 50%;
     mask-repeat: no-repeat;
     mask-position: center;

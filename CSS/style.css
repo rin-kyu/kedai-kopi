@@ -153,6 +153,7 @@ body {
     color: var(--bg);
     background-color: #fff;
     transition: 0.3s;
+    overflow: auto;
 }
 
 .shopping-cart.active {

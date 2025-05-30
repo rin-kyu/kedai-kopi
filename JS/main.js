@@ -59,8 +59,11 @@ document.addEventListener('click', function(e) {
         searchForm.classList.remove('active');
     };
 
-    if (!spcButton.contains(e.target) && !shoppingCart.contains(e.target) && !e.target.classList.contains('remove-item')) {
-        shoppingCart.classList.remove('active')
+    if (!spcButton.contains(e.target) && !shoppingCart.contains(e.target)) {
+        // Tutup hanya jika tidak sedang kosong
+        if (Alpine.store('cart').items.length > 0) {
+            Alpine.store('cart').close();
+        }
     }
 });
 

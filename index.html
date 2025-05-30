@@ -33,7 +33,7 @@
 
         <div class="nav-extra">
             <a href="#" id="search-button"><i data-feather="search"></i></a>
-            <a href="#" id="shopping-cart-button">
+            <a href="#" id="shopping-cart-button" @click.prevent="$store.cart.isOpen = !$store.cart.isOpen">
                 <i data-feather="shopping-cart"></i>
                 <span class="quntity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
             </a>
@@ -48,7 +48,7 @@
         <!-- search form end -->
 
         <!-- shopping cart start -->
-        <div class="shopping-cart">
+        <div class="shopping-cart" :class="{ 'active': $store.cart.isOpen }">
             <template x-for="(item, index) in $store.cart.items" x-key="index">
                 <div class="cart-item">
                     <img :src="`img/product/${item.img}`" :alt="{item.name}">

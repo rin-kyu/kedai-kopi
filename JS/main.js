@@ -65,21 +65,21 @@ document.addEventListener('click', function(e) {
 });
 
 // hapus item di shopping cart
-shoppingCart.addEventListener('touchstart', function(e) {
-    if (e.target.classList.contains('remove-item')) {
-        e.preventDefault();
-        const cartitem = e.target.parentElement;
-        cartitem.remove();
-    }
-})
+// shoppingCart.addEventListener('touchstart', function(e) {
+//     if (e.target.classList.contains('remove-item')) {
+//         e.preventDefault();
+//         const cartitem = e.target.parentElement;
+//         cartitem.remove();
+//     }
+// })
 
-shoppingCart.addEventListener('click', function(e) {
-    if (e.target.classList.contains('remove-item')) {
-        e.preventDefault();
-        const cartitem = e.target.parentElement;
-        cartitem.remove();
-    }
-})
+// shoppingCart.addEventListener('click', function(e) {
+//     if (e.target.classList.contains('remove-item')) {
+//         e.preventDefault();
+//         const cartitem = e.target.parentElement;
+//         cartitem.remove();
+//     }
+// })
 
 // modal box
 const itemDetailModal = document.querySelector('#item-detail-modal');

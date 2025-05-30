@@ -20,7 +20,7 @@
 
 <body>
     <!-- navbar start -->
-    <nav class="navbar">
+    <nav class="navbar" x-data>
         <a href="#" class="navbar-logo">Kenangan<span>Senja</span></a>
 
         <div class="nav-item">
@@ -33,7 +33,10 @@
 
         <div class="nav-extra">
             <a href="#" id="search-button"><i data-feather="search"></i></a>
-            <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+            <a href="#" id="shopping-cart-button">
+                <i data-feather="shopping-cart"></i>
+                <span class="quntity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+            </a>
             <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
         </div>
 
@@ -50,25 +53,14 @@
                 <img src="img/product/coffie-beans1.png" alt="product 1">
                 <div class="item-detail">
                     <h3>Product 1</h3>
-                    <div class="item-price">IDR 30K</div>
+                    <div class="item-price">
+                        <span>Rp 30.000</span> &times;
+                        <button id="remove">&minus;</button>
+                        <span>1</span>
+                        <button id="add">&plus;</button> &equals;
+                        <span>Rp 30.000</span>
+                    </div>
                 </div>
-                <i data-feather="trash-2" class="remove-item"></i>
-            </div>
-            <div class="cart-item">
-                <img src="img/product/coffie-beans1.png" alt="product 1">
-                <div class="item-detail">
-                    <h3>Product 2</h3>
-                    <div class="item-price">IDR 30K</div>
-                </div>
-                <i data-feather="trash-2" class="remove-item"></i>
-            </div>
-            <div class="cart-item">
-                <img src="img/product/coffie-beans1.png" alt="product 1">
-                <div class="item-detail">
-                    <h3>Product 3</h3>
-                    <div class="item-price">IDR 30K</div>
-                </div>
-                <i data-feather="trash-2" class="remove-item"></i>
             </div>
         </div>
         <!-- shopping cart end-->
@@ -150,7 +142,7 @@
             <template x-for="(item, index) in items" x-key="index">
                 <div class="product-card">
                     <div class="product-icons">
-                        <a href="#">
+                        <a href="#" @click.prevent="$store.cart.add(item)">
                             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <use href="img/feather-sprite.svg#shopping-cart" />
@@ -252,7 +244,7 @@
         <div class="modal-container">
             <a href="#" class="close-icon"><i data-feather="x"></i></a>
             <div class="modal-content">
-                <img src="img/product/coffie-beans2.png" alt="product-1">
+                <img src="img/product/coffie-beans1.png" alt="product-1">
                 <div class="product-content">
                     <h3>Produk 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus voluptatum eius reprehenderit fugit recusandae repudiandae exercitationem, eum culpa perspiciatis adipisci. Provident, magnam architecto? Nam, porro.</p>
